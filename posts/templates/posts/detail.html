@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>{{ post_object.title }} - My Posts!</title>
+</head>
+<body class="content container">
+  <header>
+    <nav class="py-6">
+      <a href="{% url 'posts_list' %}">Back</a>
+      <a class="ml-6" href="{% url 'edit_post' post_object.id %}">Edit</a>
+    </nav>
+  </header>
+  <main>
+    <h1 class="title">{{ post_object.title }}</h1>
+    <p>{{ post_object.created_on }}</p>
+    <h2>{{ post_object.summary }}</h2>
+    <p>{{ post_object.content }}</p>
+  </main>
+</body>
+</html>
