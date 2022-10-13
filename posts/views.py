@@ -39,7 +39,7 @@ def edit_post(request, id):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return redirect("posts_list")
+            return redirect("single_post", id=id)
     else:
         form = PostForm(instance=post)
         context = {
